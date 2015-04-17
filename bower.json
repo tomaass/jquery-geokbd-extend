@@ -1,8 +1,8 @@
 {
-  "name": "jquery-geokbd",
+  "name": "jquery-geokbd-extend",
   "version": "1.1.0",
   "authors": [
-    "blueberryapps"
+    "blueberryapps", "tomaass", "bionaut", "alcedoatthis"
   ],
   "description": "Georgian keyboard input converter",
   "main": "src/jquery.geokbd.js",
@@ -19,8 +19,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/bionaut/jquery-geokbd.git"
-  },  
+    "url": "git://github.com/tomaass/jquery-geokbd-extend.git"
+  },
   "dependencies": {
     "jquery": ">=1.9.1"
   }
