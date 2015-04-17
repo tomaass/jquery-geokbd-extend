@@ -43,13 +43,18 @@ $.fn.geokbd = function(options) {
 		$('.switch').addClass('active-kbd');
 	}
 
+	function getIsOn() {
+		return isOn
+	}
+
   switchers
     .click(function() {
     	toggleLang();
     });
 
-  switchers.enableLang = enableLang
+  switchers.enableLang 	= enableLang
   switchers.disableLang = disableLang
+  switchers.getIsOn 		= getIsOn
 
 	toggleLang(isOn = false);
 
