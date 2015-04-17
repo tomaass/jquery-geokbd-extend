@@ -31,11 +31,25 @@ $.fn.geokbd = function(options) {
       $('.switch').prop('checked', isOn);
 	}
 
+	function enableLang() {
+		isOn = true
+		$('.switch').prop('checked', isOn);
+		$('.switch').removeClass('active-kbd');
+	}
+
+	function disableLang() {
+		isOn = false
+		$('.switch').prop('checked', isOn);
+		$('.switch').addClass('active-kbd');
+	}
 
   switchers
     .click(function() {
     	toggleLang();
     });
+
+  switchers.enableLang = enableLang
+  switchers.disableLang = disableLang
 
 	toggleLang(isOn = false);
 
@@ -105,6 +119,8 @@ $.fn.geokbd = function(options) {
 			field.setSelectionRange(field.value.length, field.value.length);
 		}
 	}
+
+	return switchers
 };
 
 }(jQuery));
