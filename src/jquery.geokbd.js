@@ -7,7 +7,7 @@ $.fn.geokbd = function(options) {
 	switchers = $([]),
 	defaults = {
 		on: true,
-		hotkey: '~'
+		hotkeys: ['~', '`']
 	},
 	settings = (typeof options === 'object' ? $.extend({}, defaults, options) : defaults);
 
@@ -68,7 +68,7 @@ $.fn.geokbd = function(options) {
 		}
 
 		var ch = String.fromCharCode(e.which), kach;
-		if (settings.hotkey === ch) {
+		if (settings.hotkeys.indexOf(ch) != -1) {
 			toggleLang();
 			e.preventDefault();
 		}
