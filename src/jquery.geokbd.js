@@ -27,7 +27,7 @@ $.fn.geokbd = function(options) {
 	});
 
 	function toggleLang() {
-			if(enabled) {
+	    if(enabled) {
 	      $('.switch').toggleClass('active-kbd');
 	      isOn = !isOn;
 	      $('.switch').prop('checked', isOn);
@@ -67,11 +67,11 @@ $.fn.geokbd = function(options) {
     	toggleLang();
     });
 
-  switchers.enableLang 	= enableLang
+  switchers.enableLang  = enableLang
   switchers.disableLang = disableLang
-  switchers.getIsOn 		= getIsOn
-  switchers.disable 		= disable
-  switchers.enable 			= enable
+  switchers.getIsOn     = getIsOn
+  switchers.disable     = disable
+  switchers.enable      = enable
 
 	toggleLang(isOn = false);
 
