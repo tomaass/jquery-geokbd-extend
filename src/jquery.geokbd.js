@@ -3,6 +3,7 @@
 $.fn.geokbd = function(options) {
 	var
 	isOn,
+	enabled = true,
 	inputs = $([]),
 	switchers = $([]),
 	defaults = {
@@ -26,25 +27,39 @@ $.fn.geokbd = function(options) {
 	});
 
 	function toggleLang() {
-      $('.switch').toggleClass('active-kbd');
-      isOn = !isOn;
-      $('.switch').prop('checked', isOn);
+			if(enabled) {
+	      $('.switch').toggleClass('active-kbd');
+	      isOn = !isOn;
+	      $('.switch').prop('checked', isOn);
+	    }
 	}
 
 	function enableLang() {
 		isOn = true
 		$('.switch').prop('checked', isOn);
 		$('.switch').removeClass('active-kbd');
+		return switchers
 	}
 
 	function disableLang() {
 		isOn = false
 		$('.switch').prop('checked', isOn);
 		$('.switch').addClass('active-kbd');
+		return switchers
 	}
 
 	function getIsOn() {
 		return isOn
+	}
+
+	function disable() {
+		enabled = false
+		return switchers
+	}
+
+	function enable() {
+		enabled = true
+		return switchers
 	}
 
   switchers
@@ -55,6 +70,8 @@ $.fn.geokbd = function(options) {
   switchers.enableLang 	= enableLang
   switchers.disableLang = disableLang
   switchers.getIsOn 		= getIsOn
+  switchers.disable 		= disable
+  switchers.enable 			= enable
 
 	toggleLang(isOn = false);
 
