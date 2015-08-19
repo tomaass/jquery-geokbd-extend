@@ -104,6 +104,7 @@ $.fn.geokbd = function(options) {
 			} else {
 				pasteTo.call(kach, e.target);
 				e.preventDefault();
+        			$(e.target).trigger("change");
 			}
         }
 	});
