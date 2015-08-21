@@ -78,6 +78,8 @@ $.fn.geokbd = function(options) {
 	$(document).keypress(function(e) {
 		if (e.target.type === 'password' || e.target.type === 'email') {return;}
 
+		if ($(e.target).prop("readonly")) { return; }
+
 		if ( $(e.target).attr('maxlength') !== undefined ) {
 			var limit = parseInt($(e.target).attr('maxlength'));
 			var currentLength = $(e.target).val().length;
@@ -104,6 +106,7 @@ $.fn.geokbd = function(options) {
 			} else {
 				pasteTo.call(kach, e.target);
 				e.preventDefault();
+        			$(e.target).trigger("change");
 			}
         }
 	});
